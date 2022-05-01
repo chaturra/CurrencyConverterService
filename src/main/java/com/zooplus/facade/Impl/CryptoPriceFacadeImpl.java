@@ -6,8 +6,6 @@ import com.zooplus.service.PriceCalculaterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 
 @Component
 @RequiredArgsConstructor

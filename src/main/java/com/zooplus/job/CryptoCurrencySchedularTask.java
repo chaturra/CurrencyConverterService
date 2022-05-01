@@ -7,12 +7,11 @@ import com.zooplus.model.CryptoApiResponse;
 import com.zooplus.model.PriceData;
 import com.zooplus.repository.CryptoRatesRepository;
 import com.zooplus.repository.rest.CryptoApiClient;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -28,7 +27,7 @@ public class CryptoCurrencySchedularTask {
     private final CryptoApiClient cryptoApiClient;
     private final CryptoRatesRepository cryptoRatesRepository;
 
-    @Scheduled(initialDelay = 1000, fixedDelay = 10000000)
+    @Scheduled(initialDelay = 300, fixedDelay = 10000000)
     public void process() throws URISyntaxException, IOException {
         log.info("calling makeapi");
 
