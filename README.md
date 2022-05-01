@@ -5,6 +5,20 @@
 The purpose of this coding exercise is to implement a JAVA web application to fetch the
 current localized price of a cryptocurrency.
 
+Currency Converter Service uses scheduler task to invoke backend Crypto Api url and insert data
+in the in memory database.
+
+## Example table structure ##
+CRYPTO_CURRENCY_NAME  	   PRICE  
+Bitcoin	                  2759.9587600493583
+Tether	                  384.0708288589653
+USD Coin	              88.16112496301952
+XRP	                      79.97415602232513
+Cardano	                  1.0002108588942273
+Binance USD	              0.13172247977631946
+Avalanche	              14.940104050119858
+Shiba Inu	              37912.353322802344
+
 ### steps for build and run the project ###
 
 There are two approaches:
@@ -29,6 +43,10 @@ docker run -p 8084:8084 crypto-rate-service
 
 Service documentation url http://localhost:8084/swagger-ui/index.html
 
+## H2 database url ##
+
+http://localhost:8084/h2-console
+
 ### How to use the service? ###
 
 Run Application and hit below urls via postman
@@ -37,8 +55,7 @@ Run Application and hit below urls via postman
 
 GET v1/zoo/cryptoRates/{cryptoCurrencyCode}/{ip}
 
-Test Url: http://localhost:8084/v1/zoo/cryptoRates/Bitcoin/10.12.34.56
-          http://localhost:8084/v1/zoo/cryptoRates/Bitcoin
+1:Test Url: http://localhost:8084/v1/zoo/cryptoRates/Bitcoin
 
 Example response:
 {
@@ -46,5 +63,23 @@ Example response:
 "sign" : "$"
 }
 
-Thymeleaf:
+2: http://localhost:8084/v1/zoo/cryptoRates/XRP
+
+Example response:
+{
+"price": 79.97415602232513,
+"sign": "$"
+}
+
+3. http://localhost:8084/v1/zoo/cryptoRates/Tether
+
+Example response:
+{
+"price": 384.0708288589653,
+"sign": "$"
+}
+
+
+
+
 
